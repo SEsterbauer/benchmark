@@ -49,6 +49,6 @@ isInObjectForIn: 2302.009ms
 isInArrayReduce: 323.999ms
 isInArrayFilter: 315.491ms
 benchBatch: 10908.597ms
-results were findme,findme,findme,findme,findme,findme
+function results were findme,findme,findme,findme,findme,findme
 
 ```
