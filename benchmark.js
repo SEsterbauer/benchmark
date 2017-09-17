@@ -12,7 +12,7 @@ module.exports = {
             })
             .then(result => {
                 logger.timeEnd(fn.name);
-                logger.log('result was', result);
+                logger.log('function result was', result);
             })
             .catch(error => {
                 logger.error('Error during benchmark:', error);
@@ -30,7 +30,7 @@ module.exports = {
         }, { concurrency: 1 })
             .then(results => {
                 logger.timeEnd('benchBatch');
-                logger.log('results were', results);
+                logger.log('function results were', results.join(','));
             })
             .catch(error => {
                 logger.error('Error during benchmark batch', error);
