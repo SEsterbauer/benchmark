@@ -19,6 +19,7 @@ module.exports = {
             .then(result => {
                 logger.timeEnd(fn.name);
                 logger.log('function result was', result);
+                return result;
             })
             .catch(error => {
                 logger.error('Error during benchmark:', error);
@@ -44,6 +45,7 @@ module.exports = {
             .then(results => {
                 logger.timeEnd('benchBatch');
                 logger.log('function results were', results.join(','));
+                return results;
             })
             .catch(error => {
                 logger.error('Error during benchmark batch', error);
