@@ -1,34 +1,34 @@
-###Benchmark
-#####an out-of-the-box Javascript function benchmark library.
+### Benchmark
+##### an out-of-the-box Javascript function benchmark library.
 
-####Setup
+#### Setup
 `npm install`
 
-####Usage
+#### Usage
 ```
 bench(fn, args)
     fn {function} Function to benchmark
     args {any[]} Arguments to call fn with
 ```
-#####Example
+##### Example
 ```javascript
 benchmark.bench(isInArrayForIn, [testArray, 'findme']);
 ```
-#####Output:
+##### Output:
 ```text
 testing on testArray and testObject with length 10000000
 isInArrayForIn: 2532.736ms
 function result was [ 'findme' ]
 ```
 Alternatively, if you want to benchmark multiple functions next-to each other:
-####Usage
+#### Usage
 ```
 benchBatch(fns)
     fns {object[]}
     fns[].fn {function} Function to benchmark
     fns[].args {any[]} Arguments to call fn with
 ```
-#####Example
+##### Example
 ```javascript
 benchmark.benchBatch([
     {fn: isInArrayForIn, args: [testArray, 'findme']},
@@ -39,7 +39,7 @@ benchmark.benchBatch([
     {fn: isInObjectReduce, args: [testObject, 'findme']},
 ]);
 ```
-#####Output:
+##### Output:
 ```text
 testing on testArray and testObject with length 10000000
 isInArrayForIn: 2518.409ms
