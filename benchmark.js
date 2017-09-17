@@ -4,6 +4,12 @@ const Promise = require('bluebird');
 const logger = require('./logger');
 
 module.exports = {
+    /**
+     * Benchmark a function
+     * @param fn {function} Function to benchmark
+     * @param args {any[]} Arguments to call fn with
+     * @return {Promise.<any>}
+     */
     bench: (fn, args) => {
         logger.time(fn.name);
         return Promise.resolve()
@@ -18,6 +24,13 @@ module.exports = {
                 logger.error('Error during benchmark:', error);
             });
     },
+    /**
+     * Benchmark a batch of functions synchronously
+     * @param fns {object[]}
+     * @param fns[].fn {function} Function to benchmark
+     * @param fns[].args {any[]} Arguments to call fn with
+     * @return {Promise.<any>}
+     */
     benchBatch: (fns) => {
         logger.time('benchBatch');
         return Promise.map(fns, fn => {
