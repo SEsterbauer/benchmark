@@ -15,7 +15,7 @@ module.exports = {
                 logger.log('result was', result);
             })
             .catch(error => {
-                logger.error(`Error during benchmark: ${error}`);
+                logger.error('Error during benchmark:', error);
             });
     },
     benchBatch: (fns) => {
@@ -33,7 +33,7 @@ module.exports = {
                 logger.log('results were', results);
             })
             .catch(error => {
-                logger.error(`Error during benchmark batch`, error);
+                logger.error('Error during benchmark batch', error);
             });
     },
 };
