@@ -5,8 +5,9 @@
   "author": "Stefan Esterbauer",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SEsterbauer/benchmark.git"
+    "url": "git://github.com/SEsterbauer/benchmark.git"
   },
+  "main": "./benchmark.js",
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.6"
