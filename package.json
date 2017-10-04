@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "lightweight JS benchmarking library for testing functions",
   "author": "Stefan Esterbauer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SEsterbauer/benchmark.git"
+  },
+  "license": "MIT",
   "dependencies": {
     "bluebird": "^3.4.6"
   }
