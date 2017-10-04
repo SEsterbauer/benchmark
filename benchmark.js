@@ -5,6 +5,28 @@ const logger = require('./logger');
 
 module.exports = {
     /**
+     * Get pre-defined objects to iterate over in functions
+     * @param size {number} Size of iterator objects
+     * @returns {{testArray: [null], testObject: *}}
+     */
+    getTestIterators: size => {
+        logger.log('testing on testArray and testObject with length', size);
+
+        const testArray = [...new Array(size).keys()];
+        testArray[size] = 'findme';
+
+        const testObject = testArray.reduce((result, item, index) => {
+            result[index] = item;
+            return result;
+        }, {});
+        testObject[size] = 'findme';
+
+        return {
+            testArray,
+            testObject,
+        };
+    },
+    /**
      * Benchmark a function
      * @param fn {function} Function to benchmark
      * @param args {any[]} Arguments to call fn with
