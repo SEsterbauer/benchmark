@@ -1,4 +1,4 @@
-### Benchmark
+### FnBenchmark
 ##### an out-of-the-box Javascript function benchmark library.
 
 #### Setup
