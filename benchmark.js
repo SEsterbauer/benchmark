@@ -36,7 +36,8 @@ module.exports = {
         logger.time('benchBatch');
         return Promise.map(fns, fn => {
             logger.time(fn.fn.name);
-            return Promise.resolve(fn.fn(...fn.args))
+            return Promise.resolve()
+                .then(() => fn.fn(...fn.args))
                 .then(result => {
                     logger.timeEnd(fn.fn.name);
                     return result;
