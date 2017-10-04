@@ -1,22 +1,11 @@
 'use strict';
 
 const benchmark = require('./benchmark');
-const logger = require('./logger');
 
 // setup test
-const loops = 10000000;
-
-
-
-const testArray = [...new Array(loops).keys()];
-testArray[loops - 1] = 'findme';
-
-const testObject = testArray.reduce((result, item, index) => {
-    result[index] = item;
-    return result;
-}, {});
-
-logger.log('testing on testArray and testObject with length', testArray.length);
+const testIterators = benchmark.getTestIterators(10000000);
+const testArray = testIterators.testArray;
+const testObject = testIterators.testObject;
 
 const isInArrayForIn = (array, value) => {
     const result = [];
