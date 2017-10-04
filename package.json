@@ -1,7 +1,6 @@
 {
   "name": "fnbenchmark",
   "version": "1.0.0",
-  "private": true,
   "description": "lightweight JS benchmarking library for testing functions",
   "author": "Stefan Esterbauer",
   "dependencies": {
