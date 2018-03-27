@@ -1,6 +1,6 @@
 {
   "name": "fnbenchmark",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "lightweight JS benchmarking library for testing functions",
   "author": "Stefan Esterbauer",
   "repository": {
