@@ -6,6 +6,7 @@ const benchmark = require('./benchmark');
 const testIterators = benchmark.getTestIterators(10000000);
 const testArray = testIterators.testArray;
 const testObject = testIterators.testObject;
+benchmark.logOutput = true;
 
 const isInArrayForIn = (array, value) => {
   const result = [];
