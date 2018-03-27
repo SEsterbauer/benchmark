@@ -5,6 +5,10 @@ const logger = require('./logger');
 
 module.exports = {
   /**
+   * Log the returned value of each tested function. Turn on for debugging purposes
+   */
+  logOutput: false,
+  /**
    * Get pre-defined objects to iterate over in functions
    * @param size {number} Size of iterator objects
    * @returns {{testArray: [null], testObject: *}}
@@ -67,7 +71,9 @@ module.exports = {
     }, { concurrency: 1 })
       .then(results => {
         logger.timeEnd('benchBatch');
-        logger.log('function results were', results.join(','));
+        if (module.exports.logOutput) {
+          logger.log('function results were', results.join(','));
+        }
         return results;
       })
       .catch(error => {
