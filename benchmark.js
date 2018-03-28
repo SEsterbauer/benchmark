@@ -1,7 +1,6 @@
 'use strict';
 
 const Promise = require('bluebird');
-const logger = require('./logger');
 
 module.exports = {
   /**
@@ -14,7 +13,7 @@ module.exports = {
    * @returns {{testArray: [null], testObject: *}}
    */
   getTestIterators: size => {
-    logger.log('testing on testArray and testObject with length', size);
+    console.log('testing on testArray and testObject with length', size);
 
     const testArray = [...new Array(size).keys()];
     testArray[size] = 'findme';
@@ -37,18 +36,18 @@ module.exports = {
    * @return {Promise.<any>}
    */
   bench: (fn, args) => {
-    logger.time(fn.name);
+    console.time(fn.name);
     return Promise.resolve()
       .then(() => {
         return fn(...args);
       })
       .then(result => {
-        logger.timeEnd(fn.name);
-        logger.log('function result was', result);
+        console.timeEnd(fn.name);
+        console.log('function result was', result);
         return result;
       })
       .catch(error => {
-        logger.error('Error during benchmark:', error);
+        console.error('Error during benchmark:', error);
       });
   },
   /**
@@ -59,25 +58,25 @@ module.exports = {
    * @return {Promise.<any>}
    */
   benchBatch: (fns) => {
-    logger.time('benchBatch');
+    console.time('benchBatch');
     return Promise.map(fns, fn => {
-      logger.time(fn.fn.name);
+      console.time(fn.fn.name);
       return Promise.resolve()
         .then(() => fn.fn(...fn.args))
         .then(result => {
-          logger.timeEnd(fn.fn.name);
+          console.timeEnd(fn.fn.name);
           return result;
         });
     }, { concurrency: 1 })
       .then(results => {
-        logger.timeEnd('benchBatch');
+        console.timeEnd('benchBatch');
         if (module.exports.logOutput) {
-          logger.log('function results were', results.join(','));
+          console.log('function results were', results.join(','));
         }
         return results;
       })
       .catch(error => {
-        logger.error('Error during benchmark batch', error);
+        console.error('Error during benchmark batch', error);
       });
   },
 };
