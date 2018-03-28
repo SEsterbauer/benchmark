@@ -3,12 +3,16 @@
   "version": "1.0.2",
   "description": "lightweight JS benchmarking library for testing functions",
   "author": "Stefan Esterbauer",
+  "url": "https://github.com/SEsterbauer/fnbenchmark",
   "repository": {
     "type": "git",
-    "url": "git://github.com/SEsterbauer/benchmark.git"
+    "url": "git://github.com/SEsterbauer/fnbenchmark.git"
   },
   "main": "./benchmark.js",
   "license": "MIT",
+  "scripts": {
+    "multi_versions": "./run_multi_versions.sh $1"
+  },
   "dependencies": {
     "bluebird": "^3.4.6"
   }
