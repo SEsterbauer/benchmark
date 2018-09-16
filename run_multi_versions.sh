@@ -7,7 +7,7 @@ then
   exit
 fi
 while read version; do
-  . ~/.nvm/nvm.sh
-  nvm use $version
-  node ../../tests/$1
+  echo
+  echo Running Benchmark with Node version $version
+  ~/.nvm/versions/node/v$version/bin/node ../../tests/$1
 done < ../../node_versions
